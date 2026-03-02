@@ -14,7 +14,7 @@ export class MembersController {
     create(@Body() createMemberDto: CreateMemberDto) {
         return handleRequest(
             () => this.membersService.create(createMemberDto),
-            HttpStatus.CREATED // Pass 201 for creation
+            HttpStatus.CREATED
         );
     }
 

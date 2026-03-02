@@ -1,9 +1,10 @@
 import { useState } from "react"
-import Button from "../../components/ui/button"
-
-import SearchInput from "../../components/ui/search-input"
-import { useModalStore } from "../../store/modal-store"
+import Button from "@/components/ui/button"
+import SearchInput from "@/components/ui/search-input"
+import { useModalStore } from "@/store/modal-store"
 import MemberContainer from "./components/memeber-container"
+
+
 
 const MemberPage = () => {
     const [keyword, setKeyword] = useState<string>('');

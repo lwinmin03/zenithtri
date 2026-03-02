@@ -1,7 +1,7 @@
 import { AlertTriangle } from 'lucide-react';
-import { useModalStore } from '../../../store/modal-store';
-import ModalWrapper from '../../../components/modal-wrapper';
-import Button from '../../../components/ui/button';
+import { useModalStore } from '@/store/modal-store';
+import ModalWrapper from '@/components/modal-wrapper';
+import Button from '@/components/ui/button';
 import { useDeleteMember } from '../hooks/use-member-mutation';
 
 export default function DeleteMemberModal() {

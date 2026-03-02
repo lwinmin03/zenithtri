@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useModalStore } from '../../../store/modal-store';
-import ModalWrapper from '../../../components/modal-wrapper';
-import Button from '../../../components/ui/button';
+import { useModalStore } from '@/store/modal-store';
+import ModalWrapper from '@/components/modal-wrapper';
+import Button from '@/components/ui/button';
 import { useCreateMember } from '../hooks/use-member-mutation';
 
 
@@ -11,8 +11,6 @@ export default function CreateMemberModal() {
     const { isOpen, view, closeModal } = useModalStore();
     const { mutate: create, isPending } = useCreateMember();
     const [formData, setFormData] = useState({ firstName: '', lastName: '', dateOfBirth: '', insuranceId: '', dob: '' });
-
-
 
 
     const isModalOpen = isOpen && view === 'CREATE_MEMBER';

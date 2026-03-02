@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Pagination from '../../../components/ui/pagination';
+import Pagination from '@/components/ui/pagination';
 import { useMembers } from '../hooks/use-member-query';
 import InsuranceTable from './Insurance-table';
-import { useDebounce } from '../../../hooks/use-debounce';
+import { useDebounce } from '@/hooks/use-debounce';
 
 
 interface MemberContainerProps {
@@ -35,7 +35,7 @@ const MemberContainer = ({ keyword }: MemberContainerProps) => {
                     currentPage={page}
                     hasPrev={members?.pagination?.hasPreviousPage ?? false}
                     hasNext={members?.pagination?.hasNextPage ?? false}
-                    // 3. Receive the new page number and update the state
+
                     onPageChange={(newPage) => setPage(newPage)}
                 />
             </div>

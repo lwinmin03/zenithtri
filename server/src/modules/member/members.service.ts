@@ -15,7 +15,7 @@ export class MembersService {
     ) { }
 
     async create(createMemberDto: CreateMemberDto): Promise<Member> {
-        // 1. Check for unique Insurance ID
+        // Check for unique Insurance ID
         const existingMember = await this.membersRepository.findOne({
             where: { insuranceId: createMemberDto.insuranceId },
         });
@@ -44,7 +44,7 @@ export class MembersService {
             );
         }
 
-        // Exclude inactive members from general queries by default
+
         query.andWhere('member.status = :status', { status: MemberStatus.ACTIVE });
 
         query.skip(skip).take(limit);
@@ -52,7 +52,7 @@ export class MembersService {
 
         const [data, totalItems] = await query.getManyAndCount();
 
-        // Format output to map easily to your IResponseDto['pagination']
+
         return {
             payload: data,
             pagination: {
@@ -92,7 +92,7 @@ export class MembersService {
     async remove(id: string): Promise<Member> {
         const member = await this.findOne(id);
 
-        // 4. Soft Delete implementation
+        //Soft Delete implementation
         member.status = MemberStatus.INACTIVE;
         return await this.membersRepository.save(member);
     }

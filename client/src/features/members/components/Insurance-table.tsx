@@ -1,7 +1,7 @@
-import { useModalStore } from '../../../store/modal-store';
-import Button from '../../../components/ui/button';
+import { useModalStore } from '@/store/modal-store';
+import Button from '@/components/ui/button';
 import { PencilIcon, Trash2Icon } from 'lucide-react';
-import type { Member } from '../../../types/member';
+import type { Member } from '@/types/member';
 
 interface InsuranceRecord {
     id?: number;
