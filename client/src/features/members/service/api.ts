@@ -1,6 +1,5 @@
-
 import apiClient from "@/config/axios";
-import { type Member, type CreateMemberPayload, type UpdateMemberPayload, type FilterMemberDto, type PaginatedResponse, type BackendError, type ApiResponse } from "../../../types/member";
+import { type Member, type CreateMemberPayload, type UpdateMemberPayload, type FilterMemberDto, type PaginatedResponse, type ApiResponse } from "@/types/member";
 
 export const createMember = async (formData: CreateMemberPayload): Promise<ApiResponse<Member>> => {
     const response = await apiClient.post<ApiResponse<Member>>('/members', formData);
