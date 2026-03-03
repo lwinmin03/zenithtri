@@ -37,7 +37,7 @@ services:
       - DATABASE=members_db
     depends_on:
       postgres-db:
-        condition: service_healthy # Waits for the healthcheck to pass
+        condition: service_healthy
 
   # 3. Frontend Client
   client:
